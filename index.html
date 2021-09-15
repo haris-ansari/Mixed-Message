@@ -34,8 +34,13 @@
             <input type="radio" id="lonely" value="lonely" name="select_mood">
             <label for="lonely">Lonely</label>
             </fieldset>
-            <input type="submit" value="Get Inspired">
+            <input type="submit" value="Get Inspired" onsubmit= "return getInspired()">
             </fieldset>
         </form>
+        <button onclick="return getInspired()">Click Me</button>
+        <div id="msg">
+            <p id="apple"></p>
+        </div>
+        <script src="/script.js"></script>
     </body>
 </html>

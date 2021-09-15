@@ -26,8 +26,11 @@ const inspirationalMessage = mood => {
 
 
 const getInspired = (name, mood) => {
-    console.log(greetMessage(name));
-    console.log(inspirationalMessage(mood));
+    //let div = document.getElementById('msg');
+    //div.innerHTML += <p>greetMessage(name)</p>;
+    //inspirationalMessage(mood);
+    
 };
 
-getInspired('Haris Ansari', 'sad');
+//getInspired('Haris Ansari', 'sad');
+document.getElementById('apple').innerHTML = 'Hello this is a JS'
