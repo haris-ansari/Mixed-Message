@@ -3,7 +3,7 @@
     <head>
         <title>Mixed Message</title>
     </head>
-    <body>
+    <body id="el">
         <h1>Get Random Inspirational Message. :</h1>
         <h3>According to your mood.</h3>
         <form>
@@ -34,13 +34,13 @@
             <input type="radio" id="lonely" value="lonely" name="select_mood">
             <label for="lonely">Lonely</label>
             </fieldset>
-            <input type="submit" value="Get Inspired" onsubmit= "return getInspired()">
-            </fieldset>
+            <input type="button" onclick = 'return getInspired()' value="Get Inspired">
+           <!--- <input type="submit" value="Get Inspired" onsubmit= "return getInspired()">
+           -->          </fieldset>
         </form>
-        <button onclick="return getInspired()">Click Me</button>
         <div id="msg">
-            <p id="apple"></p>
+            
         </div>
-        <script src="/script.js"></script>
+        <script src="/Users/haris/git_practice/Mixed Message/script.js"></script>
     </body>
 </html>

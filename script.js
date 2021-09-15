@@ -13,7 +13,7 @@ const greetMessage = name => {
 }
 
 const message = {
-    sad : ['All-day is not the same, you need to wait and be patient for the good things to happen.', 'Crying alone does not show that you are weak but it shows that you are strong.', 'Wipeout your own tears, because if people come to you, they will come for a deal.', 'When you feel pain, just remember it’s the signal that your sins are getting less.', 'Never let to know the reason of your sadness to others, they won’t get it.'],
+    sad : ['All-day is not the same, you need to wait and be patient for the good things to happen.', 'Crying alone does not show that you are weak but it shows that you are strong.', 'Wipeout your own tears, because if people come to you, they will come for a deal.', 'When you feel pain, just remember it\'s the signal that your sins are getting less.', 'Never let to know the reason of your sadness to others, they won\'t get it.'],
     lonely : ['The soul that sees beauty may sometimes walk alone. --- Johann Wolfgang Von Goethe',  'A season of loneliness and isolation is when the caterpillar gets its wings. Remember that next time you feel alone. --- Mandy Hale', 'The greatest thing in the world is to know how to belong to oneself. --- Michel de Montaigne', 'People thing being alone makes you lonely, but I don’t think that’s true. Being surrounded by the wrong people is the loneliest thing in the world. --- Kim Culbertson', 'Sometimes you need to be alone. Not to be lonely, but to enjoy your free time being yourself. --- Anonymous'],
     angry : ['The man who gets angry at the right things and with the right people, and in the right way and at the right time and for the right length of time, is commended. --- Aristotle', 'Whenever you’re in conflict with someone, there is one factor that can make the difference between damaging your relationship and deepening it. That factor is attitude. --- James', 'Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured. --- Twain', 'Anger dwells only in the bosom of fools. --- Einstein', 'Bitterness is like cancer. It eats upon the host. But anger is like fire. It burns it all clean. --- Angelou'],
 };
@@ -25,12 +25,22 @@ const inspirationalMessage = mood => {
 
 
 
-const getInspired = (name, mood) => {
-    //let div = document.getElementById('msg');
-    //div.innerHTML += <p>greetMessage(name)</p>;
-    //inspirationalMessage(mood);
-    
+const getInspired = () => {
+    const name = document.getElementById('name').value;
+    const moods = document.getElementsByName('select_mood');
+    moodValue = '';
+    for(let mood of moods){
+        if(mood.checked){
+            moodValue = mood.value;
+        }
+    }
+    const para = document.createElement('p');
+    const node = document.createTextNode(greetMessage(name));
+    para.appendChild(node);
+    const para2 = document.createElement('p');
+    const node2 = document.createTextNode(inspirationalMessage(moodValue));
+    para2.appendChild(node2);
+    const element = document.getElementById('msg');
+    element.appendChild(para);
+    element.appendChild(para2);
 };
-
-//getInspired('Haris Ansari', 'sad');
-document.getElementById('apple').innerHTML = 'Hello this is a JS'
